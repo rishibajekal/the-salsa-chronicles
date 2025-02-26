@@ -1,0 +1,45 @@
+{
+  "format": "custom",
+  "id": "navigation",
+  "label": "Navigation",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "website_name": {
+        "type": "Text",
+        "config": {
+          "label": "Website Name",
+          "placeholder": "The name of the website."
+        }
+      },
+      "menu_items": {
+        "type": "Group",
+        "config": {
+          "label": "Menu Items",
+          "repeat": true,
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": "The label for the menu item."
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "The link the menu item should lead to.",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

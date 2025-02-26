@@ -1,0 +1,102 @@
+{
+  "format": "page",
+  "id": "review",
+  "label": "Review",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "product_name": {
+        "type": "Text",
+        "config": {
+          "label": "Product Name",
+          "placeholder": "The name of the product being reviewed."
+        }
+      },
+      "review_date": {
+        "type": "Date",
+        "config": {
+          "label": "Review Date",
+          "placeholder": "The date this review was created."
+        }
+      },
+      "spiciness": {
+        "type": "Select",
+        "config": {
+          "label": "Spiciness",
+          "placeholder": "The spiciness level of the product (1 = mild, 5 = hot).",
+          "options": ["1", "2", "3", "4", "5"]
+        }
+      },
+      "rating": {
+        "type": "Select",
+        "config": {
+          "label": "Rating",
+          "placeholder": "The rating of the product (1 = poor, 5 = excellent).",
+          "options": ["1", "2", "3", "4", "5"]
+        }
+      },
+      "review_text": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Review Text",
+          "placeholder": "The text containing the review.",
+          "allowTargetBlank": false,
+          "multi": "paragraph,heading1,heading2,heading3,strong,em,hyperlink"
+        }
+      },
+      "product_image": {
+        "type": "Image",
+        "config": {
+          "label": "Product Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "rich_text": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  }
+}
