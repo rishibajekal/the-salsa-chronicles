@@ -1,4 +1,5 @@
 import { Client, Content, isFilled } from "@prismicio/client";
+import { PrismicNextLink } from "@prismicio/next";
 import { PrismicLink } from "@prismicio/react";
 import { JSX } from "react";
 
@@ -11,10 +12,10 @@ export const Navigation = async ({
 
   return (
     <div className="flex justify-between items-center w-full">
-      <div className="xl:w-1/3">
+      <PrismicNextLink href="/" className="xl:w-1/3">
         {isFilled.keyText(navigation.data.website_name) &&
           `🌶 ${navigation.data.website_name}`}
-      </div>
+      </PrismicNextLink>
       <nav className="flex justify-end items-center w-full">
         <ul className="flex justify-end">
           {isFilled.group(navigation.data.menu_items) &&

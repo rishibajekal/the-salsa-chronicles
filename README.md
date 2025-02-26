@@ -1,6 +1,6 @@
 # 🌶️ The Salsa Chronicles
 
-A website to chronicle the salsas I eat.
+Chronicling the salsas I eat...
 
 Built using [Next.js](https://nextjs.org/) and [Prismic.io](https://prismic.io/).
 

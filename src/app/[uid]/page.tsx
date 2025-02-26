@@ -5,7 +5,6 @@ import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import { Navigation } from "@/components/Navigation";
 
 type Params = { uid: string };
 
@@ -16,8 +15,6 @@ export default async function Page({ params }: { params: Promise<Params> }) {
 
   return (
     <>
-      <Navigation client={client} />
-
       <div className="grid grid-cols-1 gap-8 max-w-3xl w-full">
         <SliceZone slices={page.data.slices} components={components} />
       </div>

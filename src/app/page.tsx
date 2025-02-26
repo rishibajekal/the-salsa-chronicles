@@ -5,7 +5,6 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
-import { Navigation } from "@/components/Navigation";
 import {
   reviewDocumentToReviewPreviewProps,
   ReviewPreview,
@@ -22,8 +21,6 @@ export default async function Home() {
 
   return (
     <>
-      <Navigation client={client} />
-
       <h1 className="text-4xl font-bold">{reviewPage.data.title}</h1>
 
       <div className="grid grid-cols-1 gap-8 max-w-3xl w-full">
