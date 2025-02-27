@@ -5,9 +5,10 @@ import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import { asText, isFilled } from "@prismicio/client";
+import { asDate, isFilled } from "@prismicio/client";
 import { RichText } from "@/components/RichText";
 import { PrismicNextImage } from "@prismicio/next";
+import { formatDate } from "date-fns";
 
 type Params = { uid: string };
 
@@ -27,6 +28,7 @@ export default async function Review({ params }: { params: Promise<Params> }) {
             <div className="justify-self-center max-w-10/12 lg:col-span-4 mt-10">
               <PrismicNextImage field={review.data.product_image} />
             </div>
+
             <ul className="mt-8 text-l text-gray-800 dark:text-neutral-400 sm:text-l md:text-xl lg:text-2xl">
               <li>
                 <span className="font-bold">Spiciness:</span>{" "}
@@ -45,6 +47,20 @@ export default async function Review({ params }: { params: Promise<Params> }) {
                   "☆".repeat(5 - Number.parseInt(review.data.rating!))}
               </li>
             </ul>
+
+            {review.data.review_date &&
+              isFilled.date(review.data.review_date) && (
+                <ul className="mt-8 text-m text-gray-800 dark:text-neutral-400 sm:text-m md:text-l lg:text-xl">
+                  <li>
+                    <span className="italic font-light">
+                      {formatDate(
+                        asDate(review.data.review_date),
+                        "MMMM dd, yyyy"
+                      )}
+                    </span>
+                  </li>
+                </ul>
+              )}
 
             <div className="mt-8 gap-2 sm:flex-row sm:gap-3">
               {isFilled.richText(review.data.review_text) && (

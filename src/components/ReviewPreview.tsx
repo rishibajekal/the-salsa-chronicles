@@ -1,11 +1,14 @@
 import {
+  asDate,
   asText,
   ImageField,
+  isFilled,
   KeyTextField,
   RichTextField,
 } from "@prismicio/client";
 import { ReviewDocument } from "../../prismicio-types";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { formatDate } from "date-fns";
 
 const TRUNCATED_REVIEW_TEXT_LENGTH = 150;
 
@@ -16,6 +19,7 @@ interface ReviewPreviewProps {
   rating: number;
   image: ImageField;
   review: RichTextField;
+  reviewDate: Date | null;
 }
 
 export function reviewDocumentToReviewPreviewProps(
@@ -28,6 +32,10 @@ export function reviewDocumentToReviewPreviewProps(
     rating: Number.parseInt(document.data.rating?.toString() ?? "0"),
     image: document.data.product_image,
     review: document.data.review_text,
+    reviewDate:
+      document.data.review_date && isFilled.date(document.data.review_date)
+        ? asDate(document.data.review_date)
+        : null,
   };
 }
 
@@ -46,6 +54,16 @@ export const ReviewPreview = (props: ReviewPreviewProps) => {
             <h1 className="block text-2xl font-bold text-gray-800 sm:text-2xl md:text-4xl lg:text-5xl dark:text-white">
               {props.productName}
             </h1>
+            {props.reviewDate && (
+              <ul className="mt-3 text-lg text-gray-800 dark:text-neutral-400">
+                <li>
+                  <span className="italic font-light">
+                    {formatDate(props.reviewDate, "MMMM dd, yyyy")}
+                  </span>
+                </li>
+              </ul>
+            )}
+
             <ul className="mt-3 text-lg text-gray-800 dark:text-neutral-400">
               <li>
                 <span className="bold">Spiciness:</span>{" "}
