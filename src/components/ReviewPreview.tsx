@@ -51,11 +51,11 @@ export const ReviewPreview = (props: ReviewPreviewProps) => {
       <div className="max-w-[85rem] mx-auto py-8 border-y-2 border-gray-300">
         <div className="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
           <div className="lg:col-span-3">
-            <h1 className="block text-2xl font-bold text-gray-800 sm:text-2xl md:text-4xl lg:text-5xl dark:text-white">
+            <h1 className="block text-2xl font-bold text-gray-800 sm:text-2xl md:text-4xl lg:text-5xl">
               {props.productName}
             </h1>
             {props.reviewDate && (
-              <ul className="mt-3 text-lg text-gray-800 dark:text-neutral-400">
+              <ul className="mt-3 text-lg text-gray-800">
                 <li>
                   <span className="italic font-light">
                     {formatDate(props.reviewDate, "MMMM dd, yyyy")}
@@ -64,7 +64,7 @@ export const ReviewPreview = (props: ReviewPreviewProps) => {
               </ul>
             )}
 
-            <ul className="mt-3 text-lg text-gray-800 dark:text-neutral-400">
+            <ul className="mt-3 text-lg text-gray-800">
               <li>
                 <span className="bold">Spiciness:</span>{" "}
                 {"🌶️".repeat(props.spiciness)}

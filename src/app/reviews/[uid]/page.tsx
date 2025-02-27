@@ -22,14 +22,14 @@ export default async function Review({ params }: { params: Promise<Params> }) {
       <div className="max-w-[85rem] mx-auto">
         <div className="self-center lg:gap-y-8 xl:gap-y-12 lg:items-center">
           <div className="lg:col-span-3">
-            <h1 className="block justify-self-center text-2xl text-gray-800 sm:text-2xl md:text-4xl lg:text-5xl dark:text-white">
+            <h1 className="block justify-self-center text-2xl text-gray-800 sm:text-2xl md:text-4xl lg:text-5xl">
               <span className="font-bold">{review.data.product_name}</span>
             </h1>
             <div className="justify-self-center max-w-10/12 lg:col-span-4 mt-10">
               <PrismicNextImage field={review.data.product_image} />
             </div>
 
-            <ul className="mt-8 text-l text-gray-800 dark:text-neutral-400 sm:text-l md:text-xl lg:text-2xl">
+            <ul className="mt-8 text-l text-gray-800 sm:text-l md:text-xl lg:text-2xl">
               <li>
                 <span className="font-bold">Spiciness:</span>{" "}
                 {isFilled.select(review.data.spiciness)
@@ -50,7 +50,7 @@ export default async function Review({ params }: { params: Promise<Params> }) {
 
             {review.data.review_date &&
               isFilled.date(review.data.review_date) && (
-                <ul className="mt-8 text-m text-gray-800 dark:text-neutral-400 sm:text-m md:text-l lg:text-xl">
+                <ul className="mt-8 text-m text-gray-800 sm:text-m md:text-l lg:text-xl">
                   <li>
                     <span className="italic font-light">
                       {formatDate(
