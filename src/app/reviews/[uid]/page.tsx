@@ -7,7 +7,7 @@ import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { asDate, isFilled } from "@prismicio/client";
 import { RichText } from "@/components/RichText";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { formatDate } from "date-fns";
 
 type Params = { uid: string };
@@ -20,6 +20,9 @@ export default async function Review({ params }: { params: Promise<Params> }) {
   return (
     <>
       <div className="max-w-[85rem] mx-auto">
+        <PrismicNextLink href="/" className="italic underline">
+          ← Back to all reviews
+        </PrismicNextLink>
         <div className="self-center lg:gap-y-8 xl:gap-y-12 lg:items-center">
           <div className="lg:col-span-3">
             <h1 className="block justify-self-center text-2xl text-gray-800 sm:text-2xl md:text-4xl lg:text-5xl">
