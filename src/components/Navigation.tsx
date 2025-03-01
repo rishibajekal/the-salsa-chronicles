@@ -12,7 +12,7 @@ export const Navigation = async ({
 
   return (
     <div className="flex justify-between items-center w-full">
-      <PrismicNextLink href="/" className="xl:w-1/3">
+      <PrismicNextLink href="/" className="w-full">
         {isFilled.keyText(navigation.data.website_name) &&
           `🌶 ${navigation.data.website_name}`}
       </PrismicNextLink>

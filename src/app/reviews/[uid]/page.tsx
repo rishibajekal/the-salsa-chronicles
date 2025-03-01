@@ -19,11 +19,11 @@ export default async function Review({ params }: { params: Promise<Params> }) {
 
   return (
     <>
-      <div className="max-w-[85rem]">
+      <div className="w-full md:w-5/6 lg:w-8/12]">
         <PrismicNextLink href="/" className="italic underline">
           ← Back to all reviews
         </PrismicNextLink>
-        <div className="flex flex-col">
+        <div className="flex flex-col mt-8">
           <div className="flex flex-col items-center">
             <h1 className="font-bold text-2xl text-gray-800 sm:text-2xl md:text-4xl lg:text-5xl">
               {review.data.product_name}
